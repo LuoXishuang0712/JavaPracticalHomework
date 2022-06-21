@@ -1,0 +1,2 @@
+# JavaPracticalHomework
+这是我的Java课设项目，也是我系统学习Java后的一点个人总结和感悟。
