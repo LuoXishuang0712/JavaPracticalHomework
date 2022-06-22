@@ -10,6 +10,7 @@ import com.oracle.team.service.TeamService;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashSet;
 
@@ -214,7 +215,7 @@ public class TeamView {
         if(!dir.exists() && !dir.mkdir()){
             return;
         }
-        HashSet<String> fileList = teamSvc.fileHelper.getAllAccessibleFile(savePath);
+        ArrayList<String> fileList = teamSvc.fileHelper.getAllAccessibleFile(savePath);
         if(fileList == null || fileList.size() == 0){  // 找不到存档文件
             return;
         }

@@ -2,14 +2,13 @@ package com.oracle.team.service;
 
 import com.oracle.team.domain.*;
 
-import java.util.Arrays;
-import java.util.HashSet;
+import java.util.ArrayList;
 
 public class NameListService {
-    private HashSet<Employee> employees;
+    private ArrayList<Employee> employees;
 
     public NameListService(){
-        this.employees = new HashSet<>();
+        this.employees = new ArrayList<>();
 
         for(int i = 0; i < Data.EMPLOYEES.length; i++){
             String[] item = Data.EMPLOYEES[i];
@@ -78,7 +77,6 @@ public class NameListService {
 
     public Employee[] getAllEmployees() {
         Employee[] result = employees.toArray(new Employee[0]);
-        Arrays.sort(result, (o1, o2) -> o1.getId() < o2.getId() ? -1 : 1);
         return result;
     }
 

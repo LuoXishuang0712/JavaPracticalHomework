@@ -3,8 +3,7 @@ package com.oracle.team.service;
 import com.oracle.team.domain.*;
 
 import java.io.IOException;
-import java.util.Arrays;
-import java.util.HashSet;
+import java.util.ArrayList;
 
 public class TeamService {
     static int counter = 1;
@@ -15,7 +14,7 @@ public class TeamService {
     static int archCnt = 0;
     static int desiCnt = 0;
     static int progCnt = 0;
-    private HashSet<Programmer> team = new HashSet<>();
+    private ArrayList<Programmer> team = new ArrayList<>();
     public FileHelper fileHelper = new FileHelper();
 
     public void addMember(Employee employee) throws TeamException{
@@ -87,7 +86,6 @@ public class TeamService {
 
     public Programmer[] getTeam(){
         Programmer[] result = team.toArray(new Programmer[0]);
-        Arrays.sort(result, (o1, o2) -> o1.getMemberId() < o2.getMemberId() ? -1 : 1);
         return result;
     }
 

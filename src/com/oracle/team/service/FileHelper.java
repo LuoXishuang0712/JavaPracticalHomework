@@ -1,6 +1,7 @@
 package com.oracle.team.service;
 
 import java.io.*;
+import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -20,7 +21,7 @@ public class FileHelper {
         }
     }
 
-    public HashSet<String> getAllAccessibleFile(String path){
+    public ArrayList<String> getAllAccessibleFile(String path){
         if(path == null){
             return null;
         }
@@ -28,7 +29,7 @@ public class FileHelper {
         if(!folder.exists() || !folder.isDirectory()){
             return null;
         }
-        HashSet<String> result = new HashSet<>();
+        ArrayList<String> result = new ArrayList<>();
         String[] fileList = folder.list();
         if(fileList == null){
             return null;
@@ -43,7 +44,7 @@ public class FileHelper {
     }
 
     private String getAvailableName(String path){ // 找到文件名格式的最大数字
-        HashSet<String> fileList = getAllAccessibleFile(path);
+        ArrayList<String> fileList = getAllAccessibleFile(path);
         int Max = 1;
         Pattern patternFullFilename = Pattern.compile("^S(\\d+)\\" + extensionName + "$");
         Pattern patternGetNumber = Pattern.compile("(\\d+)");

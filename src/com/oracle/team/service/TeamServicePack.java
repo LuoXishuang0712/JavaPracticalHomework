@@ -3,13 +3,13 @@ package com.oracle.team.service;
 import com.oracle.team.domain.Programmer;
 
 import java.io.Serializable;
-import java.util.HashSet;
+import java.util.ArrayList;
 
 public class TeamServicePack implements Serializable {
     private int counter;
-    private HashSet<Programmer> team = null;
+    private ArrayList<Programmer> team = null;
 
-    public TeamServicePack(int counter, HashSet<Programmer> team) {
+    public TeamServicePack(int counter, ArrayList<Programmer> team) {
         this.counter = counter;
         this.team = team;
     }
@@ -18,7 +18,7 @@ public class TeamServicePack implements Serializable {
         return counter;
     }
 
-    public HashSet<Programmer> getTeam() {
+    public ArrayList<Programmer> getTeam() {
         return team;
     }
 }
